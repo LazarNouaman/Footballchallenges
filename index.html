@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة الألغاز</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <!-- نافذة الشروط -->
+  <div id="rulesPopup" class="popupc">
+    <div class="popup-contentc">
+      <h2>شروط اللعبة</h2>
+      <h4>1. سيتم إعطاؤك تلميحات للبحث عن لاعب معين.</h4>
+      <h4>2. يجب عليك الإجابة بشكل صحيح على الأسئلة خلال 30 ثانية.</h4>
+      <h4>3. يمكنك الانتقال إلى التلميح التالي إذا كانت إجابتك خاطئة.</h4>
+      <h4>4. كلما أجبت بشكل أسرع، حصلت على نقاط أكثر.</h4>
+      <h4>5. ستستمر اللعبة حتى يتم الانتهاء من جميع اللاعبين أو عندما تنتهي من الإجابة بشكل صحيح.</h4>
+      <button onclick="startGame()">ابدأ اللعبة</button>
+    </div>
+  </div>
+
+<!-- التعتيم الخلفي -->
+  <div id="overlay" class="overlay"></div>
+  <div class="container">
+    <div class="items">
+      <div id="timer" class="timer">30</div>
+      <div id="score" class="score" style="width: 100px; border-radius: 10px;">النقاط : 0</div>
+    </div>
+    <div class="question">خمن اللاعب:</div>
+    <div id="clues" class="clues"></div>
+    <div class="input-section">
+      <input type="text" id="answer" placeholder="أدخل إجابتك هنا">
+      <button onclick="checkAnswer()">إرسال</button>
+      <button style="background: #ffcc00; color: #000;" onclick="showNextClue()">تلميح</button>
+    </div>
+  </div>
+
+  <!-- Player Popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <img id="playerImage" src="" alt="Player">
+    <h2></h2><h2 id="playerName">أحسنت اللعب هو :</h2>
+    <button onclick="closePopup()">متابعة</button>
+  </div>
+
+  <!-- Message Popup -->
+  <div class="message-popup" id="messagePopup">
+    <h2 id="messageText"></h2>
+    <button onclick="closeMessagePopup()">حسناً</button>
+  </div>
+  <div class="social-media-links">
+    <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@yourprofile" target="_blank" class="social-icon tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.youtube.com/channel/yourchannel" target="_blank" class="social-icon youtube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
